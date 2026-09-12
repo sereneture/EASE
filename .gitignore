@@ -1,0 +1,16 @@
+# Core archives kept locally only (do not upload code and paper)
+code/
+paper/
+results_summary/
+*.ps1
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Editor directories
+.vscode/
+.idea/
+.cursor/
