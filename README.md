@@ -1,4 +1,4 @@
-# EASE: Continuous Simplex Commitment for Multi-Target Allocation and Motion Control
+# EASE: Distributed Continuous Simplex Commitment for Multi-Target Allocation and Motion Control
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Status: Under Review](https://img.shields.io/badge/Status-Under%20Review-orange.svg)]()
@@ -9,19 +9,25 @@
 
 Official project repository and open-source visual evaluation suite for:
 
-> **Continuous Simplex Commitment for Multi-Target Allocation and Motion Control**  
+> **Distributed Continuous Simplex Commitment for Multi-Target Allocation and Motion Control**  
 > *Under Review at Robotics and Autonomous Systems (Elsevier)*  
-> *Authors: Wang Chen (王琛) et al.*
+> *Author: Chen Wang (王琛) <sereneture@gmail.com>*
 
 ---
 
-## 🌟 Research Highlights
+## 🌟 Core Innovations & Research Highlights
 
-- **Continuous Simplex Commitment Interface**: Replaces brittle discrete target assignments with continuous probability simplex dynamics $\mathbf{a}_i \in \Delta^{M-1}$. By continuously blending target-dependent guidance velocity fields $\mathbf{v}_i^{\text{des}} = \sum_{j=1}^M a_{ij} \mathbf{v}_{ij}$, the framework eliminates boundary chattering, target thrashing, and high-frequency combinatorial re-computations.
-- **Count-Adaptive Standoff Formation**: Dynamically adjusts multi-target encirclement ring radii based on local target threat weights and assigned subgroup quotas ($n^*_j$), ensuring uniform chordal packing and balanced angular coverage across diverse target counts.
-- **Deadlock-Free Circulation Bypass & Density-Gated Merging**: Introduces latched tangential circulation around static obstacles and foreign target exclusion zones to break collinear force deadlocks, coupled with density-gated spiral entry to guarantee rapid ring convergence without outer limit-cycle orbits.
-- **Target-Core Standoff Safety Projection**: Integrates active acceleration barrier filtering that treats target entities as protected cores ($d_{\min} \ge \max(4r_{\text{body}}, 2r_{\text{body}} + V_{\max}\Delta t)$), preventing transient vehicle penetration and overshoot while preserving smooth asymptotic ring closure.
-- **24-Dimensional Similitude Envelope via Active CMA-ES**: Normalizes vehicle kinematics and operational geometries through dimensionless $\Pi$-groups under similitude scaling. An offline Active CMA-ES calibration discovers globally robust envelope parameters under racing evaluations, enabling zero-shot transfer from nominal teams ($N=8, 18, 40$) to ultra-dense large swarms ($N=80$) without re-tuning.
+• **Distributed Potential-Game Decision Architecture & Continuous Allocation--Motion Interface**:  
+Multi-target task allocation is cast as a distributed strictly concave potential game with negative congestion feedback. Operating entirely without a central coordinator or auction master, each autonomous vehicle updates its mixed strategy on the probability simplex via onboard logit evolutionary dynamics and local-neighbourhood consensus. The global threat-proportional force quota emerges self-organizedly from micro-level local peer interactions. By directly blending target-dependent velocity fields with the continuous commitment state, the framework eliminates discrete-assignment interface chattering and target thrashing at the root without requiring heuristic dwell times or switching deadbands.
+
+• **Feasibility-Embedded Dimensionless Control Envelope**:  
+To overcome the curse of dimensionality and infeasibility in high-dimensional controller tuning, a 24-parameter dimensionless representation is derived by establishing score-gauge invariance to eliminate drift degrees of freedom. Critical physical and geometric constraints—including inter-agent dynamic braking floors, inscribed polygon standoff clearance, and actuator velocity headroom budgets—are hard-coded directly into the parameterization decoder. This structurally guarantees feasibility and enables zero-shot similitude transfer across varied operational scales and speeds.
+
+• **Unified Multi-Task Formulation with High-Density Anti-Stall Mechanisms**:  
+Count-adaptive dynamic encirclement and one-shot kinetic interception are unified under a shared continuous commitment backbone. To break deadlock and congestion in ultra-dense regimes, the architecture integrates non-conservative gyroscopic stream curl bypass fields to eliminate collinear saddle points, alongside target-core barrier projections and density-gated merging. The system maintains deadlock-free, high-flux convergence even in extreme stress tests up to $N=80$ vehicles navigating cluttered dynamic obstacles.
+
+• **Offline Robust Calibration via Two-Timescale Active CMA-ES**:  
+A two-timescale architecture coordinates fast online flight adaptation with slow offline envelope evolution. A composite robust evaluation criterion ($0.7\mathbb{E} + 0.3Q_{80}$) accounts for both nominal performance and worst-quintile risk across diverse held-out scenarios. Leveraging instance-level racing and ranking surrogates, Active CMA-ES navigates the well-conditioned dimensionless search space efficiently, optimizing multi-objective trade-offs while drastically cutting true closed-loop simulation budget.
 
 ---
 
@@ -168,8 +174,8 @@ If you find this work, visual benchmarks, or control framework useful in your re
 
 ```bibtex
 @article{wang2026ease,
-  title={EASE: Continuous simplex commitment for multi-target allocation and motion control},
-  author={Wang, Chen and collaborators},
+  title={EASE: Distributed Continuous Simplex Commitment for Multi-Target Allocation and Motion Control},
+  author={Wang, Chen},
   journal={Robotics and Autonomous Systems},
   year={2026},
   note={Under Review}
