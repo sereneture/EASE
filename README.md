@@ -69,23 +69,11 @@ Evaluates one-shot kinetic interception against agile intruders under high speed
 
 ### 3. Macro Benchmark & Extreme Density Stress Demonstrations
 
-#### Task 1: Five-Target Count-Adaptive Encirclement ($N = 40, M = 5$)
-Multi-target encirclement benchmark under non-uniform quota allocation and cluttered obstacle fields.
+| Task 1: Five-Target Count-Adaptive Encirclement ($N=40$, $M=5$) | Task 2: Large-Scale Ultra-Dense Encirclement ($N=80$, $M=5$) |
+| :---: | :---: |
+| <img src="animations/ease_encircle_five_target_seed21.gif" alt="Scenario 1: Five-Target Count-Adaptive Encirclement (N=40, M=5)" width="100%"/> | <img src="animations/ease_encircle_n80_seed21.gif" alt="Scenario 2: Large-Scale Ultra-Dense Encirclement (N=80, M=5)" width="100%"/> |
 
-<p align="center">
-  <img src="animations/ease_encircle_five_target_seed21.gif" alt="Scenario 1: Five-Target Count-Adaptive Encirclement (N=40, M=5)" width="78%"/>
-</p>
-
-> *(a) **Non-Uniform Quotas** ($M=5$): Self-organizing distribution satisfying target threat proportions ($n^* = [8, 12, 6, 14, \dots]$). (b) **Dynamic Color Blending**: Triangle glyph colors continuously represent simplex commitment weights $\mathbf{a}_i$. (c) **Deadlock-Free Bypass**: Latched tangential curl routes vehicles around obstacle clusters without collinear stalls. (d) **Core Protection**: Zero target-core penetration ($d_{\min}^{\text{tar}} = 0.641\,\text{m} > 2r_{\text{body}}$).*
-
-#### Task 2: Large-Scale Ultra-Dense Encirclement ($N = 80, M = 5$)
-Extreme swarm density stress test evaluating high-flux obstacle navigation, collision avoidance, and multi-ring convergence.
-
-<p align="center">
-  <img src="animations/ease_encircle_n80_seed21.gif" alt="Scenario 2: Large-Scale Ultra-Dense Encirclement (N=80, M=5)" width="78%"/>
-</p>
-
-> *(a) **High-Density Swarm** ($N=80$): High flux coordination through narrow obstacle corridors. (b) **Radial-Priority Entry**: Density-gated spiral merge guides outer vehicles into inner rings, eliminating outer circling traps. (c) **Scale-Invariant Closure**: Sustained high quota satisfaction ($Q \approx 0.749$) with zero permanent stalls and zero collisions across all 80 agents.*
+> *Left ($N=40$): non-uniform quotas, continuous color blending of $\mathbf{a}_i$, latched obstacle bypass, and target-core clearance $d_{\min}^{\text{tar}}=0.641\,\text{m}$. Right ($N=80$): high-flux corridor navigation, density-gated spiral merge, and scale-invariant closure ($Q\approx 0.749$) with zero permanent stalls.*
 
 ---
 
